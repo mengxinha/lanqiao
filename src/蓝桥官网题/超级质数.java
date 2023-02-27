@@ -1,3 +1,5 @@
+package 蓝桥官网题;
+
 import java.util.Scanner;
 
 //Integer.parseInt()  可以将数字字符串转换为数字
