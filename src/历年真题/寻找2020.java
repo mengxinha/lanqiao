@@ -16,39 +16,36 @@ public class 寻找2020 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = 6;  //几行几列
-        int sum =0;
-        int [][]arr = new int[n][n];
-        for(int i=0;i<n;i++)
-        {
+        int sum = 0;
+        int[][] arr = new int[n][n];
+        for (int i = 0; i < n; i++) {
 //            String  str = scanner.next();
-            for(int j=0;j<n;j++) {
+            for (int j = 0; j < n; j++) {
 //                arr[i][j]=Integer.parseInt(str);
 
                 arr[i][j] = scanner.nextInt();
             }
         }
 
-        for(int i=0;i<n;i++)  // 行
+        for (int i = 0; i < n; i++)  // 行
         {
-            for(int j=0;j<n-4;j++)
-            if(arr[i][j]*1000+arr[i][j+1]*100+arr[i][j+2]*10+arr[i][j+3]==2020)
-            {
-                sum++;
-            }
-        }
-        for(int i=0;i<n;i++)  // 列
-        {
-            for(int j=0;j<=n-4;j++)
-                if(arr[j][i]*1000+arr[j+1][i]*100+arr[j+2][i]*10+arr[j+3][i]==2020)
-                {
+            for (int j = 0; j <=n - 4; j++)
+                if (arr[i][j] * 1000 + arr[i][j + 1] * 100 + arr[i][j + 2] * 10 + arr[i][j + 3] == 2020) {
                     sum++;
                 }
         }
-        for(int k=0;k<=n-4;k++)  // 斜线
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <=2; j++) {
+                if (arr[j][i] * 1000 + arr[j + 1][i] * 100 + arr[j + 2][i] * 10 + arr[j + 3][i] == 2020)
+                    sum++;
+            }
+        }
+
+
+        for (int k = 0; k <= n - 4; k++)  // 斜线
         {
-            for(int j=0;j<=n-4;j++)
-                if(arr[k][j]*1000+arr[k+1][j+1]*100+arr[k+2][j+2]*10+arr[k+3][j+3]==2020)
-                {
+            for (int j = 0; j <= n - 4; j++)
+                if (arr[k][j] * 1000 + arr[k + 1][j + 1] * 100 + arr[k + 2][j + 2] * 10 + arr[k + 3][j + 3] == 2020) {
                     sum++;
                 }
         }
